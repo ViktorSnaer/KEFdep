@@ -28,6 +28,7 @@ export default function Navbar() {
               <a
                 href="https://viktorsnaer.com/index.html"
                 target="_blank"
+                rel="noreferrer"
                 className={styles.link}
               >
                 GitHub

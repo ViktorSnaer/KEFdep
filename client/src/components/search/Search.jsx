@@ -20,7 +20,7 @@ export default function Search({ data }) {
           ? data
               .filter((data) => {
                 if (searchTerm === "") {
-                  return null;
+                  return;
                 } else if (
                   data[1].toLowerCase().includes(searchTerm.toLocaleLowerCase())
                 ) {

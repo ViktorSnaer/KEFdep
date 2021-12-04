@@ -27,7 +27,7 @@ module.exports.scraper = async function () {
   );
 
   // wait for pop-up to aper
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(500);
   // accept cookies
   await page.click(".ch2-btn.ch2-allow-all-btn");
 
