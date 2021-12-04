@@ -11,9 +11,13 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.get("/api", async (req, res) => {
   // wait for async res
-  scraper.scraper().then(function (data) {
-    res.json({ message: data });
-  });
+
+  try {
+    const data = await scraper.scraper();
+    res.status(200).send({ message: data });
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 app.get("*", (req, res) => {
