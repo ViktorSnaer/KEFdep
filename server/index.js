@@ -14,7 +14,7 @@ app.get("/api", async (req, res) => {
 
   try {
     const data = await scraper.scraper();
-    res.status(200).send({ message: data });
+    res.status(200).send({ data });
   } catch (error) {
     res.status(500).send(error);
   }
