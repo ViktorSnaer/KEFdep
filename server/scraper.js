@@ -18,7 +18,10 @@ module.exports.scraper = async function () {
   let flightsSorted = [];
   // tell bot to open up the browser
   // to ways of lunching the browser headless en non-headless => browser not open / browser open
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox"],
+  });
   // open page in new browser
   const page = await browser.newPage();
 
