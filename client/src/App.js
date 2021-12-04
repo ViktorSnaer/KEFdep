@@ -14,7 +14,9 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch("/api");
+      const data = await fetch("https://kef-departures.herokuapp.com/api", {
+        method: "GET",
+      });
       const json = await data.json();
       setData(JSON.parse(json.message));
     };
