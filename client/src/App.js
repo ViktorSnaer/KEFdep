@@ -13,9 +13,12 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(JSON.parse(data.message)));
+    const fetchData = async () => {
+      const data = await fetch("/api");
+      const json = await data.json();
+      setData(JSON.parse(json.message));
+    };
+    fetchData().catch(console.error);
   }, []);
 
   return (
