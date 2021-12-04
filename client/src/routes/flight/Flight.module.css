@@ -1,0 +1,76 @@
+.container {
+  margin: 2rem auto;
+  width: 600px;
+  min-height: 66vh;
+}
+
+@media (max-width: 650px) {
+  .container {
+    width: 95%;
+  }
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  filter: brightness(80%);
+  object-fit: cover;
+}
+
+.dest {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(0, -100%);
+  color: #ffffffff;
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+}
+
+.container p {
+  font-weight: 600;
+  color: #ff5326;
+}
+
+.info {
+  position: relative;
+  border-bottom: 1px solid #ff5326;
+}
+
+@media (max-width: 600px) {
+  .info {
+    padding-bottom: 2rem;
+  }
+}
+
+.center {
+  width: fit-content;
+  margin: auto;
+}
+
+.airline {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+
+.departure {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+
+@media (max-width: 600px) {
+  .airline {
+    top: 50%;
+  }
+  .departure {
+    top: 50%;
+  }
+}

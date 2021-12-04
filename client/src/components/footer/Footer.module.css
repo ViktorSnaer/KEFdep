@@ -1,0 +1,31 @@
+.footer {
+  background-color: #50d9af;
+  width: 100%;
+}
+
+.container {
+  background-color: #50d9af;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+.projectLinks {
+  display: flex;
+}
+
+.projectLinks a {
+  margin: 0rem 1rem 0.2rem 0;
+  text-decoration: none;
+}
+
+.devLinks > * {
+  margin: 0.3rem 0;
+}
+
+.devLinks a {
+  text-decoration: none;
+}

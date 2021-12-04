@@ -1,0 +1,13 @@
+.container {
+  max-width: 1000px;
+  margin: 4rem auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 180px;
+  margin: 0.5rem;
+}

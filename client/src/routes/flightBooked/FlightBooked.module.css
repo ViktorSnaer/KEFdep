@@ -1,0 +1,15 @@
+.container {
+  min-height: 75vh;
+  position: relative;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header {
+  font-family: lobster;
+  font-size: 3rem;
+}

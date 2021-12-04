@@ -1,0 +1,38 @@
+.container {
+  width: 130px;
+  height: 30px;
+  position: relative;
+}
+
+.container button {
+  width: 50px;
+  height: 20px;
+  font-size: 1rem;
+  background-color: #ff5326;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+}
+
+.decrement {
+  position: absolute;
+  top: 0%;
+}
+.increment {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+
+.container p {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -80%);
+}
+
+.passengers {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
