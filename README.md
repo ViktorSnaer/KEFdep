@@ -1,5 +1,7 @@
 # Keflavik Departures
 
+Project hosted on heroku https://kef-departures.herokuapp.com/
+
 My main motivation for creating this project was to showcase my technical skills to potential employers, along with my love for travel and aviation.
 
 This site's function is to present all outgoing flights for the consecutive day from Iceland's international airport (Keflavik Airport), where the destination, time of departure, and airline will be displayed for each flight. This project mimics a travel site, all that is missing is the option to continue booking your flight. The search feature allows users to find a flight to their destination of choice, displaying their destination and time of departure. A potential problem that this project could solve is to help with filling more seats and minimize the risk for air travelers, as they can be tested for Covid-19 before they purchase a flight ticket.

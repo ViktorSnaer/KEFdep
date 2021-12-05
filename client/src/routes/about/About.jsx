@@ -4,11 +4,15 @@ export default function About() {
   return (
     <div>
       <div className={styles.imgContainer}>
-        <img
-          className={styles.img}
-          src="/img/terminal.jpg"
-          alt="airport terminal"
-        />
+        {/* load .webp if no support load .jpg */}
+        <picture>
+          <source srcSet="/img/terminal.webp" type="image/webp" />
+          <img
+            className={styles.img}
+            src="/img/terminal.jpg"
+            alt="airport terminal"
+          />
+        </picture>
       </div>
       <div className={styles.container}>
         <h1>About the Project</h1>

@@ -26,7 +26,7 @@ export default function Navbar() {
             <li>
               {" "}
               <a
-                href="https://viktorsnaer.com/index.html"
+                href="https://github.com/ViktorSnaer/KEFdep"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.link}

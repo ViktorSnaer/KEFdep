@@ -9,7 +9,13 @@ export default function Footer() {
           <Link to="/">Home</Link>
           <Link to="/all-flights">All Flights</Link>
           <Link to="/about">About</Link>
-          <a href="https://github.com/ViktorSnaer">gitHub</a>
+          <a
+            href="https://github.com/ViktorSnaer/KEFdep"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
         </div>
         <div className={styles.devLinks}>
           <p>Created and developed by Viktor Snaer © 2021</p>
