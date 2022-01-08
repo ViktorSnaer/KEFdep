@@ -10,8 +10,6 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.get("/api", async (req, res) => {
-  // wait for async res
-
   try {
     const data = await scraper.scraper();
     res.status(200).send({ data });

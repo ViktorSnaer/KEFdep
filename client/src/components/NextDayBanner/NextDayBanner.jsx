@@ -1,6 +1,6 @@
-import styles from "./NextDay.module.css";
+import styles from "./NextDayBanner.module.css";
 
-export default function nextDay() {
+export default function nextDayBanner() {
   let dateRef = new Date();
   let date = dateRef.getDate() + 1;
   let month = dateRef.getMonth() + 1;

@@ -18,7 +18,9 @@ export default function Footer() {
           </a>
         </div>
         <div className={styles.devLinks}>
-          <p>Created and developed by Viktor Snaer © 2021</p>
+          <p>
+            Created and developed by Viktor Snaer © {new Date().getFullYear()}
+          </p>
           <p>
             See more projects on{" "}
             <a href="https://viktorsnaer.com/">viktorsnaer.com</a>

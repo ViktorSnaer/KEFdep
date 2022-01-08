@@ -1,32 +1,18 @@
 const puppeteer = require("puppeteer");
+const nextDay = require("./nextDay.js");
 
 module.exports.scraper = async function () {
-  // get number of days of current month
-  function daysInMonth(month, year) {
-    return new Date(year, month, 0).getDate();
-  }
+  const getDates = nextDay();
 
-  // dates for link
-  let today = new Date();
-  let year = today.getFullYear();
-  let month = today.getMonth() + 1;
-  let date = today.getDate();
-  // last day of the month?
-  date === daysInMonth(month, year) ? (date = 1) : (date = date + 1);
-
-  // init for sorted flights
-  let flightsSorted = [];
-  // tell bot to open up the browser
-  // to ways of lunching the browser headless en non-headless => browser not open / browser open
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox"],
   });
-  // open page in new browser
+
   const page = await browser.newPage();
 
   await page.goto(
-    `https://www.isavia.is/en/keflavik-airport/flight-information/departures?d=${year}-${month}-${date}`
+    `https://www.isavia.is/en/keflavik-airport/flight-information/departures?d=${getDates.year}-${getDates.month}-${getDates.nextDay}`
   );
 
   // wait for pop-up to aper
@@ -37,31 +23,29 @@ module.exports.scraper = async function () {
   const flights = await page.evaluate(() => {
     const getFlights = document.querySelectorAll(".schedule-items-entry td");
 
-    // store el in one arr
-    let flightsRaw = [];
+    let flightsUntrimmed = [];
 
-    // .innerHTML grabs the html code if tag includes embedded tags
-    // .innerText gets text/string only. Ignores html tags
-    getFlights.forEach((project) => {
-      flightsRaw.push(project.innerText);
+    getFlights.forEach((flight) => {
+      flightsUntrimmed.push(flight.innerText);
     });
 
-    return flightsRaw;
+    return flightsUntrimmed;
   });
-  await browser.close();
-  // every flight has 6 el => number of flights = length/6
-  const noFlights = flights.length / 6;
 
-  for (let i = 0; i < noFlights; i++) {
-    // remove flight number
+  await browser.close();
+
+  const numberOfFlights = flights.length / 6;
+
+  let flightsTrimmed = [];
+
+  for (let i = 0; i < numberOfFlights; i++) {
+    // flight number
     flights.splice(2, 1);
-    // push: time, city/airport, airline
-    flightsSorted.push(flights.splice(0, 3));
-    // remove unusable el
+    // time, city/airport, airline
+    flightsTrimmed.push(flights.splice(0, 3));
+
     flights.splice(0, 2);
   }
-  flightsSorted.length > 0
-    ? console.log("operation successful")
-    : console.log("operation unsuccessful");
-  return JSON.stringify(flightsSorted);
+
+  return JSON.stringify(flightsTrimmed);
 };

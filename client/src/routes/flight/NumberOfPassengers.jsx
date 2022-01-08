@@ -1,16 +1,16 @@
 import { useState } from "react";
-import styles from "./NoPass.module.css";
+import styles from "./NumberOfPassengers.module.css";
 
-export default function NoPass() {
-  const [no, setNo] = useState(1);
+export default function NumberOfPassengers() {
+  const [number, setNumber] = useState(1);
 
   const increment = () => {
-    setNo(no + 1);
+    setNumber(number + 1);
   };
 
   const decrement = () => {
-    if (no > 1) {
-      setNo(no - 1);
+    if (number > 1) {
+      setNumber(number - 1);
     }
   };
 
@@ -21,7 +21,7 @@ export default function NoPass() {
         <button className={styles.decrement} onClick={decrement}>
           -
         </button>
-        <p>{no}</p>
+        <p>{number}</p>
         <button className={styles.increment} onClick={increment}>
           +
         </button>

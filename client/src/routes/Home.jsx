@@ -1,12 +1,12 @@
 import DisplayFlights from "../components/flights/DisplayFlights";
 import Header from "../components/header/Header";
-import NextDay from "../components/NextDay/NextDay";
+import NextDayBanner from "../components/NextDayBanner/NextDayBanner";
 
 export default function Home({ data }) {
   return (
     <div>
       <Header data={data} />
-      <NextDay />
+      <NextDayBanner />
       <DisplayFlights data={data} />
     </div>
   );
