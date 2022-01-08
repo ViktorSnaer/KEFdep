@@ -7,21 +7,3 @@ My main motivation for creating this project was to showcase my technical skills
 This site's function is to present all outgoing flights for the consecutive day from Iceland's international airport (Keflavik Airport), where the destination, time of departure, and airline will be displayed for each flight. This project mimics a travel site, all that is missing is the option to continue booking your flight. The search feature allows users to find a flight to their destination of choice, displaying their destination and time of departure. A potential problem that this project could solve is to help with filling more seats and minimize the risk for air travelers, as they can be tested for Covid-19 before they purchase a flight ticket.
 
 For the back-end, I used node.js, as JavaScript is the programming language most familiar to me. The data is scraped using Puppeteer where all data concerning each flight is received- I then filter out unnecessary data, and I use Express for the API. For the front-end I use React.js, and I don't rely on any CSS framework for my styling. All routes are made with react-router-dom. I thoroughly enjoyed working on this project and I intend to continue developing it. All images credit for this site: unsplash.com
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Starts the server.
-
-To spin up the client. cd client and run npm start.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
